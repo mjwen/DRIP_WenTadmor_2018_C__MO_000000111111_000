@@ -35,8 +35,6 @@ include ../Makefile.KIM_Config
 MODEL_DRIVER_NAME := RDP_Kolmogorov_Crespi__MD_000000111111_000
 MODEL_NAME := RDP_Kolmogorov_Crespi_graphite__MO_000000111111_000
 SPECIES_001_NAME    := C
-SPECIES_002_NAME    := Mo
-SPECIES_003_NAME    := S
 PARAM_FILE_001_NAME := RDP_Kolmogorov_Crespi_graphite.params
 
 # APPEND to compiler option flag lists
