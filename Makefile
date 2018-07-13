@@ -36,9 +36,9 @@ include $(shell $(KIM_API_BUILD_CONFIG) --master-config)
 
 
 # set model driver specific details
-MODEL_DRIVER_NAME := RDP_modified_Kolmogorov_Crespi__MD_000000111111_000
-MODEL_NAME := RDP_modified_Kolmogorov_Crespi_graphite__MO_000000111111_000
-PARAM_FILE_1_NAME := RDP_modified_Kolmogorov_Crespi_graphite.params
+MODEL_DRIVER_NAME := DRIP_WenTadmor__MD_000000111111_000
+MODEL_NAME := DRIP_WenTadmor_2018_C__MO_000000111111_000
+PARAM_FILE_1_NAME := DRIP_C.params
 
 # APPEND to compiler option flag lists
 #FFLAGS   +=
