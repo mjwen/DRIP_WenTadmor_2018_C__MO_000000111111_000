@@ -19,29 +19,33 @@
 #
 
 #
-# Copyright (c) 2012, Regents of the University of Minnesota.  All rights reserved.
+# Copyright (c) 2013--2018, Regents of the University of Minnesota.
+# All rights reserved.
 #
 # Contributors:
-#    Ryan S. Elliott
-#    Ellad B. Tadmor
-#    Valeriu Smirichinski
+#    Mingjian Wen
 #
 
 
 # load all basic KIM make configuration
-include ../Makefile.KIM_Config
+KIM_API_BUILD_CONFIG = kim-api-v2-build-config
+ifeq ($(shell $(KIM_API_BUILD_CONFIG) --version 2> /dev/null),)
+  $(error $(KIM_API_BUILD_CONFIG) utility is not available.  Something is wrong with your KIM API package setup)
+endif
+include $(shell $(KIM_API_BUILD_CONFIG) --master-config)
+
 
 # set model driver specific details
-MODEL_DRIVER_NAME := RDP_Kolmogorov_Crespi__MD_000000111111_000
-MODEL_NAME := RDP_Kolmogorov_Crespi_graphite__MO_000000111111_000
-SPECIES_001_NAME    := C
-PARAM_FILE_001_NAME := RDP_Kolmogorov_Crespi_graphite.params
+MODEL_DRIVER_NAME := DRIP_WenTadmor__MD_000000111111_000
+MODEL_NAME := DRIP_WenTadmor_2018_C__MO_000000111111_000
+PARAM_FILE_1_NAME := DRIP_C.params
 
 # APPEND to compiler option flag lists
 #FFLAGS   +=
 #CFLAGS   +=
 #CXXFLAGS +=
 #LDFLAGS  +=
+#LDLIBS   +=
 
 # load remaining KIM make configuration
 include $(KIM_DIR)/$(builddir)/Makefile.ParameterizedModel
