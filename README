@@ -27,25 +27,18 @@
 #
 
 
-# load all basic KIM make configuration
-KIM_API_BUILD_CONFIG = kim-api-v2-build-config
-ifeq ($(shell $(KIM_API_BUILD_CONFIG) --version 2> /dev/null),)
-  $(error $(KIM_API_BUILD_CONFIG) utility is not available.  Something is wrong with your KIM API package setup)
-endif
-include $(shell $(KIM_API_BUILD_CONFIG) --master-config)
+This directory (DRIP_WenTadmor_2018_C__MO_000000111111_000) contains a
+Dihedral-angle-corrected registry-dependent interlayer potential (DRIP) Model
+for carbon.
 
+The DRIP potential for carbon only provides a description of the interlayer
+interactions of multilayer graphene structures. To give a full description of
+the interactions of multilayer graphene structures, it needs to be used together
+with another potential that provides the intralayer descriptions (e.g. Tersoff,
+and REBO).
 
-# set model driver specific details
-MODEL_DRIVER_NAME := DRIP_WenTadmor__MD_000000111111_000
-MODEL_NAME := DRIP_WenTadmor_2018_C__MO_000000111111_000
-PARAM_FILE_1_NAME := DRIP_C.params
+The DRIP potential for carbon is described in the following references:
+1. M. Wen, S. Carr, S. Fang, E. Kaxiras, and E. B. Tadmor, "Dihedral-angle-corrected
+   registry-dependent interlayer potential for multilayer graphene structures",
+   Phys. Rev. B, submitted.
 
-# APPEND to compiler option flag lists
-#FFLAGS   +=
-#CFLAGS   +=
-#CXXFLAGS +=
-#LDFLAGS  +=
-#LDLIBS   +=
-
-# load remaining KIM make configuration
-include $(KIM_DIR)/$(builddir)/Makefile.ParameterizedModel
